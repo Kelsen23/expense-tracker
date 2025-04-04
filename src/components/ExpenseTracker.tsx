@@ -5,6 +5,7 @@ const ExpenseTracker = () => {
   const { expenses, addExpense, removeExpense } = useStore();
   const [description, setDescription] = useState<string>("");
   const [amount, setAmount] = useState<number | "">("");
+  const total = expenses.reduce((sum, expense) => sum + (expense.amount || 0), 0);
 
   const handleAddExpense = () => {
     if (description.trim() === "" || amount === "") return;
@@ -73,6 +74,7 @@ const ExpenseTracker = () => {
             </li>
           ))}
         </ul>
+        <div className="text-2xl font-bold text-purple-500 text-center">Total: ${total}</div>
       </div>
     </div>
   );
