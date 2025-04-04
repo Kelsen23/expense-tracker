@@ -44,7 +44,10 @@ const ExpenseTracker = () => {
         </div>
 
         <div className="flex justify-between">
-          <button onClick={handleAddExpense} className="bg-purple-600 cursor-pointer text-white px-6 py-3 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
+          <button
+            onClick={handleAddExpense}
+            className="bg-purple-600 cursor-pointer text-white px-6 py-3 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          >
             Add Expense
           </button>
         </div>
@@ -56,8 +59,17 @@ const ExpenseTracker = () => {
               className="flex justify-between items-center bg-purple-50 p-4 rounded-lg shadow-sm transition-transform hover:scale-105"
             >
               <span className="text-gray-800 font-semibold ">
-                {expense.description} : ${expense.amount.toFixed(2)}
+                {expense.description}: {""}
+                <span className="text-purple-600">
+                  ${expense.amount.toFixed(2)}
+                </span>
               </span>
+              <button
+                className="bg-red-600 cursor-pointer text-white px-3 py-2 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                onClick={() => removeExpense(expense.id)}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ul>
