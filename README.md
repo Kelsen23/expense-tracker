@@ -20,7 +20,7 @@ A simple and beautiful React + Zustand-based expense tracking application. This 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/expense-tracker.git
+git clone https://github.com/Kelsen23/expense-tracker.git
 cd expense-tracker
 npm install
 npm run dev
